@@ -1,5 +1,5 @@
 FROM openjdk:8
-COPY . .
-CMD ["java", "-jar", "course-0.0.1-SNAPSHOT.jar"]
+ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
 EXPOSE 8081
 
