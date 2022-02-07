@@ -1,5 +1,5 @@
 FROM openjdk:8
 COPY . .
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
 EXPOSE 8081
 
