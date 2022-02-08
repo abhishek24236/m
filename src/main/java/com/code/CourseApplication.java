@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySources;
 @SpringBootApplication
 @EnableDiscoveryClient
 @PropertySources({
-	 @PropertySource({"file:C:\\Users\\Administrator\\microservice\\course.properties"})
+	 @PropertySource({"/course.properties"})
 })
 public class CourseApplication {
 
