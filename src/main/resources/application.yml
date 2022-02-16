@@ -9,13 +9,14 @@ spring:
     enabled: true
 
   datasource: 
-    url : ${datasource.url}
-    username : ${datasource.username}
-    password : ${datasource.password}
+    url : jdbc:sqlserver://10.130.34.160:1433;databaseName=paymanager;CharacterSet=UTF-8
+    username : sa
+    password : 123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa: 
     properties:
       hibernate:
-        dialect: ${datasource.dialect}
+        dialect: org.hibernate.dialect.SQLServer2008Dialect
         connection: 
           characterEncoding: UTF-8
           CharSet: UTF-8
@@ -39,6 +40,11 @@ management:
 
       
 eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8083/eureka
+      defaultZone: http://eureka-0.eureka.istio-system.svc.cluster.local:8761/eureka

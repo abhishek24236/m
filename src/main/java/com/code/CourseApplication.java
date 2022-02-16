@@ -7,11 +7,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 
+
 @SpringBootApplication
 @EnableDiscoveryClient
-@PropertySources({
-	 @PropertySource({"com/code/course.properties"})
-})
 public class CourseApplication {
 
 	public static void main(String[] args) {
